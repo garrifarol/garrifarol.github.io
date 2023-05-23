@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/dist/style.css" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/redketchup/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/redketchup/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/redketchup/favicon-32x32.png">
+    <link rel="manifest" href="assets/redketchup/site.webmanifest">
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <title>Garri Farol</title>
+</head>
+<body>
+        <div class="loading">
+            <div class="loading-content">
+                <h2 class="loading-text">kumusta.</h2>
+            </div>
+        </div>
+
+        <header class="header">
+            <div class="header-content">
+                <a href="#" class="logo"><span class="logo-span">g</span>arrifarol</a>
+                <nav class="nav">
+                    <ul class="nav-list">
+                        <li>
+                            <a href="#home" class="nav-a">
+                                <i class='icon nav-icon bx bx-home'></i>
+                                <span class="nav-name">Home</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#about" class="nav-a">
+                                <i class='icon nav-icon bx bx-user'></i>
+                                <span class="nav-name">About</span> 
+                            </a>
+                        </li>
+                        <li>    
+                            <a href="#projects" class="nav-a">
+                                <i class='icon nav-icon bx bx-briefcase-alt'></i>
+                                <span class="nav-name">Project</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#contact" class="nav-a">
+                                <i class='icon nav-icon bx bx-envelope'></i>
+                                <span class="nav-name">Contact</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <i class='icon theme-btn bx' ></i>
+            </div>
+        </header>
+    
+        <main>
+            <section class="section" id="home">
+                <div class="home-content">
+                    <div class="home-about">
+                        <h3 class="home-greeting">Hello there!</h3>
+                        <h1 class="home-name">I'm Garri.</h1>
+                        <div class="home-job-contaniner">
+                            <h2 class="home-job">A Software Engineer.</h2>
+                        </div>
+                        <div class="social">
+                            <ul class="social-list">
+                                <li>
+                                    <a href="https://github.com/garrifarol" target="_blank">
+                                        <i class='icon bx bxl-github'></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.linkedin.com/in/garrifarol/" target="_blank">
+                                        <i class='icon bx bxl-linkedin-square' ></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <lottie-player src="./assets/95348-coding-boy.json" background="transparent" speed="1" class="lottie" loop autoplay></lottie-player>
+                </div>
+            </section>
+            <section class="section" id="about">
+                <h3 class="section-title">About Me</h3>
+                <div class="about-content">
+                    <div class="about-me">
+                        <p>I am a Software Engineer for <span id="years"></span> years now, experienced with both frontend and backend development. I first became interested in software development in 2020 after accepting a friend's invitation to take a coding course. I began by enrolling in a free Harvard course called CS50. It was extremely beneficial to me in reintroducing Computer Science, which I had difficulty understanding in college.</p>
+                        <p>My current main area of interest is web development. I work hard to produce high-quality websites that adhere to industry standards by always advancing myself, honing my skills, and being up of new technology. I do not, however, wish to limit myself to web development since I want to gain exposure to all areas of the IT sector.</p>
+                        <button class="tldr">
+                            <span>Tl;dr?</span>
+                        </button>
+                    </div>
+                    <div class="about-skills hidden">
+                        <i class='icon bx bx-arrow-back about-back'></i>
+                        <ul class="about-list">
+                            <li>
+                                <div class="card">
+                                    <div class="card-header">
+                                        <i class='icon bx bxs-palette'></i>
+                                        <h4>Frontend</h4>
+                                    </div>
+                                    <div class="card-content">
+                                        <ul class="skill-list">
+                                            <li>HTML</li>
+                                            <li>CSS</li>
+                                            <li>Javascript</li>
+                                            <li>Angular</li>
+                                            <li>React</li>
+                                            <li>Bootstrap</li>
+                                            <li>Tailwind</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="card">
+                                    <div class="card-header">
+                                        <i class='icon bx bxs-buildings'></i>
+                                        <h4>Backend</h4>
+                                    </div>
+                                    <div class="card-content">
+                                        <ul class="skill-list">
+                                            <li>Node.js</li>
+                                            <li>Java</li>
+                                            <li>Express</li>
+                                            <li>PostgreSQL</li>
+                                            <li>Firebase</li>
+                                            <li>MongoDB</li>
+                                            <li>Apache</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="card">
+                                    <div class="card-header">
+                                        <i class='icon bx bxs-wrench'></i>
+                                        <h4>Tools</h4>
+                                    </div>
+                                    <div class="card-content">
+                                        <ul class="skill-list">
+                                            <li>VSCode</li>
+                                            <li>Eclipse</li>
+                                            <li>Git</li>
+                                            <li>SVN</li>
+                                            <li>DBeaver</li>
+                                            <li>Insomnia</li>
+                                            <li>WinSCP</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section class="section" id="projects">
+                <div class="projects-content">
+                    <h3 class="section-title">Projects</h3>
+                    <ul class="project-list">
+                        <li>
+                            <div class="project">
+                                <div class="project-content">
+                                    <a href="https://agency.migo.io/landing" target="_blank">
+                                        <span class="absolute -inset-x-4 -inset-y-2.5 hidden rounded md:-inset-x-6 md:-inset-y-4 lg:block"></span>
+                                        <h4 class="project-title">
+                                            AgenMigo <i class='bx bxs-right-top-arrow-circle' ></i>
+                                        </h4>
+                                    </a>
+                                    <p class="project-detail">
+                                        A Marketing Tool that mirrors a Multi-level Marketing to spread awareness to target users in Indonesia about the company's product. Managing users, sales, user hierarchies and other important features to support the goal are available in the app. 
+                                    </p>
+                                    <ul class="tech-list">
+                                        <li>
+                                            <p class="tech">Angular</p>
+                                        </li>
+                                        <li>
+                                            <p class="tech">Boostrap</p>
+                                        </li>
+                                        <li>
+                                            <p class="tech">Node.js</p>
+                                        </li>
+                                        <li>
+                                            <p class="tech">Express</p>
+                                        </li>
+                                        <li>
+                                            <p class="tech">PostgreSQL</p>
+                                        </li>
+                                        <li>
+                                            <p class="tech">Firebase</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <img src="./assets/marketing-tool.png" alt="marketing tool" class="project-preview">
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="project">
+                                <div class="project-content">
+                                    <a href="https://weather-app-34052.web.app/" target="_blank">
+                                        <span class="absolute -inset-x-4 -inset-y-2.5 hidden rounded md:-inset-x-6 md:-inset-y-4 lg:block"></span>
+                                        <h4 class="project-title">
+                                            WeatherApp <i class='bx bxs-right-top-arrow-circle' ></i>
+                                        </h4>
+                                    </a>
+                                    <p class="project-detail">
+                                        A simple weather application, reimplemented in Angular. It shows the weather news for every city in the whole world. 
+                                    </p>
+                                    <ul class="tech-list">
+                                        <li>
+                                            <p class="tech">Angular</p>
+                                        </li>
+                                        <li>
+                                            <p class="tech">Boostrap</p>
+                                        </li>
+                                        <li>
+                                            <p class="tech">Climacons</p>
+                                        </li>
+                                        <li>
+                                            <p class="tech">Open-Meteo API</p>
+                                        </li>
+                                        <li>
+                                            <p class="tech">Firebase</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <img src="./assets/weather-app.png" alt="Weather App" class="project-preview">
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <section class="section" id="contact">
+                <h2 class="contact-title">Get in Touch</h2>
+                <p class="contact-subtitle">I would like to hear from you!</p>
+
+                <div class="contact-content">
+                    <form id="contactForm">
+                        <div class="input-text">
+                            <div class="relative">
+                                <div class="input-icon">
+                                    <i class='icon bx bx-user' ></i>
+                                </div>
+                                <input type="text" class="input" id="name" placeholder="Enter your name">
+                            </div>
+                            
+                        </div>
+                        <div class="input-text">
+                            <div class="relative">
+                                <div class="input-icon">
+                                    <i class='icon bx bx-envelope' ></i>
+                                </div>
+                                <input type="text" class="input" id="email" placeholder="Enter your email address">
+                            </div>
+                        </div>
+                        <div class="input-text">
+                            <div class="relative">
+                                <textarea type="text" class="input" id="message" placeholder="Enter your message"></textarea>
+                            </div>
+                        </div>  
+                        <button type="submit" class="submit-btn">Submit</button>
+                    </form>
+                    <img src="assets/Social-Communication-freesvgillustration.com/Social-Communication.svg" class='contact-svg' alt="">
+                </div>  
+                
+            </section>
+        </main>
+        <div id="msgSuccessful" class="fixed top-5 z-50 toast hidden items-center w-full max-w-xs p-4 mb-4 text-gray-500 bg-white rounded-lg shadow dark:text-gray-400 dark:bg-gray-800" role="alert">
+            <div class="inline-flex items-center justify-center flex-shrink-0 w-8 h-8 text-green-500 bg-green-100 rounded-full dark:bg-green-800 dark:text-green-200">
+                <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                <span class="sr-only">Check icon</span>
+            </div>
+            <div class="ml-3 text-sm font-normal">Message sent successfully.</div>
+            <button type="button" class="ml-auto -mx-1.5 -my-1.5 bg-white text-gray-400 hover:text-gray-900 rounded-lg focus:ring-2 focus:ring-gray-300 p-1.5 hover:bg-gray-100 inline-flex h-8 w-8 dark:text-gray-500 dark:hover:text-white dark:bg-gray-800 dark:hover:bg-gray-700" data-dismiss-target="#toast-success" aria-label="Close">
+                <span class="sr-only">Close</span>
+                <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+            </button>
+        </div>
+        <div id="msgUnsuccessful" class="fixed top-5 z-50 toast hidden items-center w-full max-w-xs p-4 mb-4 text-gray-500 bg-white rounded-lg shadow dark:text-gray-400 dark:bg-gray-800" role="alert">
+            <div class="inline-flex items-center justify-center flex-shrink-0 w-8 h-8 text-red-500 bg-red-100 rounded-full dark:bg-red-800 dark:text-red-200">
+                <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                <span class="sr-only">Error icon</span>
+            </div>
+            <div class="ml-3 text-sm font-normal">Message not sent. Please try again</div>
+            <button type="button" class="ml-auto -mx-1.5 -my-1.5 bg-white text-gray-400 hover:text-gray-900 rounded-lg focus:ring-2 focus:ring-gray-300 p-1.5 hover:bg-gray-100 inline-flex h-8 w-8 dark:text-gray-500 dark:hover:text-white dark:bg-gray-800 dark:hover:bg-gray-700" data-dismiss-target="#toast-danger" aria-label="Close">
+                <span class="sr-only">Close</span>
+                <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+            </button>
+        </div>
+    <script type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+    (function(){
+        emailjs.init("NwmYfNtTxq0EJIi0V");
+    })();
+    </script>
+    <script src="./src/main.js"></script>
+</body>
+</html>

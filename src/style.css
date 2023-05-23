@@ -1,0 +1,398 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+:root {
+    --pri-color: #06070e;
+    --sec-color: #edffec;
+    --ter-color: #61e786;
+    --qua-color: #ff9f1c;
+}
+
+@layer base {
+    html {
+        @apply overflow-hidden;
+        scroll-padding: var(--scroll-padding, 5rem);
+    }
+
+    htmL {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        font-family: 'Inter', sans-serif;
+        @apply text-pri-color bg-sec-color dark:text-sec-color dark:bg-pri-color;
+    }
+
+    h1 {
+        @apply text-6xl mb-12 font-bold
+    }
+
+    h2 {
+        @apply text-3xl mb-10 font-bold
+    }
+
+    h3 {
+        @apply text-xl mb-8 font-semibold
+    }   
+
+    h4 {
+        @apply text-lg mb-4 font-semibold
+    }
+
+    p {
+        @apply leading-normal;
+    }
+}
+
+@layer components {
+    .loading {
+        @apply w-full h-full fixed top-0 left-0 bg-sec-color z-[100] dark:bg-pri-color;
+        transition: all 0.2s cubic-bezier(0.27,-1.71, 0.76, 0.68);
+    }
+
+    .loading-content {
+        @apply w-full h-full flex items-center justify-center transition-all
+    }
+
+    /* .loading-list {
+        @apply h-9;
+        animation:
+            sliding 6s
+    } */
+/* 
+    @keyframes sliding {
+        
+    } */
+
+    .loading-list h2 {
+        @apply text-center
+    }
+
+    .bubble-up {
+        /* @apply rounded-full; */
+        scale: 0;
+        /* top: -100vh; */
+    }
+
+    .header {
+        @apply  w-full fixed top-0 left-0 bg-sec-color py-6 px-[10%] dark:bg-pri-color z-50
+                md:flex md:items-center md:justify-between;
+    }
+
+    .header-content {
+        @apply  w-full flex items-center justify-between
+    }
+    
+    .icon {
+        @apply  text-2xl;
+    }
+
+    .logo {
+        @apply  text-2xl font-bold;
+    }
+
+    .nav {
+        @apply  fixed bottom-5 left-0 right-0 w-60 mx-auto border-2 border-pri-color rounded-3xl p-3 bg-sec-color z-50
+                dark:bg-pri-color dark:border-sec-color 
+                md:static md:border-none md:mx-0 md:w-[47%];
+    }
+
+    .nav-list {
+        @apply  flex items-center justify-between;
+    }
+
+    .nav-a {
+        @apply  flex flex-col items-center font-semibold
+                md:hover:text-qua-color md:dark:hover:text-ter-color;
+    }
+
+    .nav-name {
+        @apply  hidden text-sm uppercase md:block ;
+    }
+
+    .nav-icon {
+        @apply  md:!hidden;
+    }
+
+    .theme-btn {
+        @apply cursor-pointer text-ter-color
+    }
+
+    .active-link {
+        @apply  text-qua-color transition-colors relative dark:text-ter-color;
+    }
+
+    .active-link::after {
+        content: '';
+        @apply  absolute top-6 w-1 h-1 bg-qua-color rounded-full dark:bg-ter-color;
+    }
+
+    /* .main-content {
+        @apply pt-24
+    } */
+    
+
+    .card {
+        @apply w-72 max-w-2xl p-6 border border-sec-color dark:border-pri-color rounded-lg shadow md:hover:scale-110 transition-all;
+    }
+
+    .card-header {
+        @apply flex flex-col items-center justify-center 
+    }
+
+
+    .card-header .icon{
+        @apply text-6xl
+    }
+
+
+/* @apply rounded-lg w-[20vw] h-72 bg-sec-color; */
+    .section {
+        @apply py-10 px-[10%] mb-5;
+    }
+
+    .section-title {
+        @apply mx-auto md:text-center uppercase;
+    }
+
+    .home-content {
+        @apply pt-16 flex flex-col justify-center items-center md:flex-row
+    }
+
+    .home-greeting {
+        @apply uppercase mb-2;
+    }
+
+    .home-name {
+        @apply text-[600%] text-qua-color dark:text-ter-color mb-2
+    }
+
+    .home-job-contaniner {
+        @apply inline-block
+    }
+
+    .home-job {
+        @apply text-3xl md:text-4xl inline-block border-r overflow-hidden whitespace-nowrap mb-2; 
+
+        animation: 
+            typing 9.25s infinite,
+            cursor .4s step-end infinite alternate;
+    }
+    
+    @keyframes cursor {
+        50% {border-color: transparent}
+    }
+
+    @keyframes typing {
+        0%{
+            width: 0%;
+        }
+        15%, 100% {
+            width: 100%;
+        }
+    }
+
+    .lottie {
+        @apply w-5/12 -z-50;  
+    }
+
+    #about {
+        @apply bg-qua-color text-sec-color dark:bg-ter-color dark:text-pri-color
+    }
+
+    .about-content {
+        @apply flex items-center justify-center text-base;
+    }
+
+    .about-me {
+        @apply max-w-screen-md text-lg md:px-[4%] 2xl:px-[10%];
+    }
+
+    .about-me p{
+        @apply mb-4;
+    }
+
+    .tldr {
+        @apply font-semibold py-2 px-4 w-32 border-2 dark:border-pri-color;
+    }
+
+    .tldr:hover span {
+        @apply hidden;
+    }
+
+    .tldr:hover:before {
+        content: 'TᴖT';
+    }
+
+    .tldr:active {
+        scale: 0.85;
+    }
+
+    .tldr:active span {
+        @apply hidden;
+    }
+
+    .tldr:active:before {
+        content: 'TᴖT';
+    }
+
+    .about-skills .bx-arrow-back{
+        @apply text-4xl cursor-pointer mb-5;
+    }
+    
+    .about-list {
+        @apply flex flex-col gap-9
+        lg:flex-row
+    }
+
+    .skill-list {
+        @apply  px-4 text-lg list-disc;
+    }
+
+    .social-list {
+        @apply flex items-center justify-start gap-4
+    }
+
+    .social-list li {
+        @apply align-middle md:hover:text-qua-color md:hover:dark:text-ter-color
+    }
+            
+    .social-list i {
+        @apply text-3xl
+    }
+
+    .project-list {
+        @apply flex flex-col gap-8
+    }
+
+    .project-list li{
+        @apply lg:flex lg:items-center lg:justify-center
+    }
+
+    .project {
+        @apply relative rounded-lg flex flex-col md:p-5 md:flex-row-reverse md:gap-5 lg:max-w-screen-md transition ease-in
+    }
+
+    @media screen(md) {
+        .project:hover {
+            background: rgba(255, 255, 255, 0.11);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+    }
+    
+
+    .project-title {
+        @apply text-qua-color dark:text-ter-color
+    }
+
+    .project-detail {
+        @apply mb-2 text-base
+    }
+
+    .project-preview {
+        @apply max-w-[15rem] h-auto rounded-lg shadow-lg
+    }
+
+    .tech-list {
+        @apply flex flex-wrap gap-2 mb-3
+    }
+
+    .tech {
+        @apply rounded-full bg-qua-color text-sec-color dark:bg-ter-color text-xs dark:text-pri-color px-3 py-1
+    }
+
+    .input-text {
+        @apply relative mb-6
+    }
+
+    #contact {
+        @apply max-w-2xl md:max-w-7xl md:py-48 block mx-auto rounded-2xl;
+        background: rgba(255, 255, 255, 0.11);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+    }
+
+    #contact h2{
+        @apply mb-1
+    }
+
+    .contact-title {
+        @apply mb-2 text-qua-color dark:text-ter-color
+    }
+
+    .contact-subtitle {
+        @apply mb-6
+    }
+
+    .contact-content {
+        @apply flex flex-col md:flex-row md:justify-between 
+    }
+
+    #contactForm {
+        @apply grow;
+    }
+
+    .input-icon {
+        @apply absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none
+    }
+
+    .input {    
+        @apply pl-11 p-2.5 rounded-lg text-sm w-full bg-gray-50 border border-gray-300 text-gray-900 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500
+    }
+
+    #message {
+        @apply pl-3 h-48 resize-none; 
+    }
+
+    .submit-btn {
+        @apply mt-6 p-3 w-full rounded-lg bg-qua-color text-sec-color dark:bg-ter-color dark:text-pri-color;
+    }
+
+    .contact-svg {
+        @apply w-1/2 hidden md:block;
+    }
+
+    .error {
+        @apply border-2 border-red-500 dark:border-red-500;
+    }
+
+    .error-text {
+        @apply mt-2 text-sm text-red-600 dark:text-red-500
+    }
+
+    .toast {
+        @apply transition-all;
+        animation: toast .5s forwards;
+    }
+
+    @keyframes toast {
+        from {
+            opacity: 0;
+            right:0;
+        }
+        to {
+            opacity: 1;
+            right: 1.25rem;
+        }
+    }
+
+    /* .footer {
+        @apply hidden h-96 2xl:block
+    } */
+
+}
+
+@layer utilities {
+    .dark {
+        color-scheme: dark;
+    }
+
+}
+
