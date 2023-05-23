@@ -197,7 +197,7 @@
     }
 
     .lottie {
-        @apply w-5/12 -z-50;  
+        @apply w-10/12 -z-50;  
     }
 
     #about {
