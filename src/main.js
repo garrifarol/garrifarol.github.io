@@ -1,57 +1,3 @@
-// ===================== Loading ======================
-const loading = document.querySelector('.loading');
-const loadingContent = document.querySelector('.loading-content');
-
-window.addEventListener('DOMContentLoaded', () => {
-    setTimeout(() => {
-        // document.documentElement.classList.add('overflow-auto')
-        loadingContent.classList.add('bubble-up');
-    }, 1600);
-    setTimeout(() => {
-        document.documentElement.classList.add('overflow-auto')
-        loading.classList.add('hidden');
-    }, 1750);
-})
-
-const loadingText = document.querySelector('.loading-text');
-
-const textLoad = () => {
-    setTimeout(() => {
-        loadingText.textContent = 'hola.';
-    }, 0);
-    setTimeout(() => {
-        loadingText.textContent = 'こんにちは';
-    }, 150);
-    setTimeout(() => {
-        loadingText.textContent = 'bonjour.';
-    }, 300);
-    setTimeout(() => {
-        loadingText.textContent = '您好';
-    }, 450);
-    setTimeout(() => {
-        loadingText.textContent = 'salve.';
-    }, 600);
-    setTimeout(() => {
-        loadingText.textContent = 'नमस्ते';
-    }, 750);
-    setTimeout(() => {
-        loadingText.textContent = 'kumusta.';
-    }, 900);
-}
-
-textLoad();
-
-// ======================= Number of years as software Engineer ========================
-
-const startDate = new Date('2021', '01');
-const currentDate = new Date();
-const diffYear = currentDate.getFullYear() - startDate.getFullYear();
-
-const years = document.querySelector('#years');
-
-years.textContent = diffYear
-
-
 // ================================ Toogle Dark Light Mode ===========================
 const themeBtn = document.querySelector('.theme-btn');
 const logoSpan = document.querySelector('.logo-span');
@@ -94,9 +40,71 @@ themeBtn.addEventListener('click', () => {
 
 themeCheck();
 
+// ===================== Loading ======================
+const loading = document.querySelector('#loading');
+const loadingContent = document.querySelector('#loading .content');
+
+const loadingText = document.querySelector('.loading-text');
+
+const textLoad = () => {
+    setTimeout(() => {
+        loadingText.textContent = 'hola.';
+    }, 0);
+    setTimeout(() => {
+        loadingText.textContent = 'こんにちは';
+    }, 150);
+    setTimeout(() => {
+        loadingText.textContent = 'guten tag.';
+    }, 300);
+    setTimeout(() => {
+        loadingText.textContent = 'shalom.';
+    }, 450);
+    setTimeout(() => {
+        loadingText.textContent = '您好';
+    }, 600);
+    setTimeout(() => {
+        loadingText.textContent = 'salve.';
+    }, 750);
+    setTimeout(() => {
+        loadingText.textContent = 'नमस्ते';
+    }, 900);
+    setTimeout(() => {
+        loadingText.textContent = 'bonjour.';
+    }, 1040);
+    setTimeout(() => {
+        loadingText.textContent = 'kumusta.';
+    }, 1200);
+}
+
+window.addEventListener('load', () => {
+    textLoad();
+    setTimeout(() => {
+        // document.documentElement.classList.add('overflow-auto')
+        loadingContent.classList.add('scale-0');
+    }, 1700);
+    setTimeout(() => {
+        document.documentElement.classList.add('overflow-auto')
+        loading.classList.add('hidden');
+    }, 1900);
+})
+
+// ======================= Number of years as software Engineer ========================
+
+const startDate = new Date('2021', '01');
+const currentDate = new Date();
+const diffYear = currentDate.getFullYear() - startDate.getFullYear();
+
+const years = document.querySelector('#years');
+
+years.textContent = diffYear
+
+// header shadow
+
+const header = document.querySelector
+
 // ============================ Scroll to section ===============================
 
-const navigation = document.querySelector(".header");
+const navigation = document.querySelector("#header");
 
 const navigationHeight = navigation.offsetHeight;
 

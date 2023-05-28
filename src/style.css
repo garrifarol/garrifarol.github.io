@@ -7,18 +7,15 @@
 
 :root {
     --pri-color: #06070e;
-    --sec-color: #edffec;
+    --sec-color: #f6efee;
     --ter-color: #61e786;
     --qua-color: #ff9f1c;
 }
 
 @layer base {
-    html {
+    htmL {
         @apply overflow-hidden;
         scroll-padding: var(--scroll-padding, 5rem);
-    }
-
-    htmL {
         scroll-behavior: smooth;
     }
 
@@ -49,42 +46,47 @@
 }
 
 @layer components {
-    .loading {
+
+    /* ======================================= reusables =========================================== */
+    .content {
+        /* w-full h-full flex items-center justify-center transition-all
+        w-full flex items-center justify-between
+        pt-16 flex flex-col justify-center items-center md:flex-row
+        flex items-center justify-center text-base;
+        flex flex-col md:flex-row md:justify-between  */
+        @apply w-full h-full flex;
+    }
+
+    .section {
+        @apply py-10 px-[10%] mb-5;
+    }
+
+    .section-title {
+        @apply mx-auto md:text-center uppercase;
+    }
+
+    /* ======================================= non-reusables =========================================== */
+
+    #loading {
         @apply w-full h-full fixed top-0 left-0 bg-sec-color z-[100] dark:bg-pri-color;
         transition: all 0.2s cubic-bezier(0.27,-1.71, 0.76, 0.68);
     }
 
-    .loading-content {
-        @apply w-full h-full flex items-center justify-center transition-all
+    #loading .content {
+        @apply items-center justify-center transition-all
     }
 
-    /* .loading-list {
-        @apply h-9;
-        animation:
-            sliding 6s
-    } */
-/* 
-    @keyframes sliding {
-        
-    } */
-
-    .loading-list h2 {
-        @apply text-center
-    }
-
-    .bubble-up {
-        /* @apply rounded-full; */
+    .scale-0{
         scale: 0;
-        /* top: -100vh; */
     }
 
-    .header {
+    #header {
         @apply  w-full fixed top-0 left-0 bg-sec-color py-6 px-[10%] dark:bg-pri-color z-50
                 md:flex md:items-center md:justify-between;
     }
 
-    .header-content {
-        @apply  w-full flex items-center justify-between
+    #header .content {
+        @apply items-center justify-between;
     }
     
     .icon {
@@ -96,9 +98,13 @@
     }
 
     .nav {
-        @apply  fixed bottom-5 left-0 right-0 w-60 mx-auto border-2 border-pri-color rounded-3xl p-3 bg-sec-color z-50
-                dark:bg-pri-color dark:border-sec-color 
-                md:static md:border-none md:mx-0 md:w-[47%];
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        @apply  fixed bottom-5 left-0 right-0 w-64 mx-auto rounded-3xl px-5 py-3 z-50 text-pri-color bg-white/40
+                dark:text-sec-color dark:bg-black/40
+                md:static md:border-none md:mx-0 md:bg-transparent md:shadow-none md:px-2 md:w-[47%];
+        
     }
 
     .nav-list {
@@ -149,18 +155,8 @@
         @apply text-6xl
     }
 
-
-/* @apply rounded-lg w-[20vw] h-72 bg-sec-color; */
-    .section {
-        @apply py-10 px-[10%] mb-5;
-    }
-
-    .section-title {
-        @apply mx-auto md:text-center uppercase;
-    }
-
-    .home-content {
-        @apply pt-16 flex flex-col justify-center items-center md:flex-row
+    #home .content {
+        @apply flex-col justify-around items-center pt-16 md:flex-row
     }
 
     .home-greeting {
@@ -176,7 +172,7 @@
     }
 
     .home-job {
-        @apply text-3xl md:text-4xl inline-block border-r overflow-hidden whitespace-nowrap mb-2; 
+        @apply text-3xl md:text-4xl inline-block border-r border-pri-color overflow-hidden whitespace-nowrap mb-2 dark:border-sec-color; 
 
         animation: 
             typing 9.25s infinite,
@@ -197,15 +193,15 @@
     }
 
     .lottie {
-        @apply w-10/12 -z-50;  
+        @apply w-8/12 -z-50;  
     }
 
     #about {
         @apply bg-qua-color text-sec-color dark:bg-ter-color dark:text-pri-color
     }
 
-    .about-content {
-        @apply flex items-center justify-center text-base;
+    #about .content {
+        @apply max-w-screen-sm flex flex-col items-center justify-center mx-auto sm:p-16 text-base;
     }
 
     .about-me {
@@ -265,6 +261,10 @@
         @apply text-3xl
     }
 
+    #projects .content {
+        @apply flex-col
+    }
+
     .project-list {
         @apply flex flex-col gap-8
     }
@@ -275,6 +275,10 @@
 
     .project {
         @apply relative rounded-lg flex flex-col md:p-5 md:flex-row-reverse md:gap-5 lg:max-w-screen-md transition ease-in
+    }
+
+    .project:nth-child(even) {
+        @apply md:flex-row
     }
 
     @media screen(md) {
@@ -331,7 +335,7 @@
         @apply mb-6
     }
 
-    .contact-content {
+    #contact .content {
         @apply flex flex-col md:flex-row md:justify-between 
     }
 
@@ -382,11 +386,6 @@
             right: 1.25rem;
         }
     }
-
-    /* .footer {
-        @apply hidden h-96 2xl:block
-    } */
-
 }
 
 @layer utilities {

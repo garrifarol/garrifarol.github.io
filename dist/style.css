@@ -422,12 +422,9 @@ video {
   display: none;
 }
 
-html {
+htmL {
   overflow: hidden;
   scroll-padding: var(--scroll-padding, 5rem);
-}
-
-htmL {
   scroll-behavior: smooth;
 }
 
@@ -574,7 +571,42 @@ p {
   --tw-backdrop-sepia:  ;
 }
 
-.loading {
+/* ======================================= reusables =========================================== */
+
+.content {
+  /* w-full h-full flex items-center justify-center transition-all
+        w-full flex items-center justify-between
+        pt-16 flex flex-col justify-center items-center md:flex-row
+        flex items-center justify-center text-base;
+        flex flex-col md:flex-row md:justify-between  */
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+.section {
+  margin-bottom: 1.25rem;
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+.section-title {
+  margin-left: auto;
+  margin-right: auto;
+  text-transform: uppercase;
+}
+
+@media (min-width: 768px) {
+  .section-title {
+    text-align: center;
+  }
+}
+
+/* ======================================= non-reusables =========================================== */
+
+#loading {
   position: fixed;
   top: 0px;
   left: 0px;
@@ -584,18 +616,15 @@ p {
   background-color: var(--sec-color);
 }
 
-:is(.dark .loading) {
+:is(.dark #loading) {
   background-color: var(--pri-color);
 }
 
-.loading {
+#loading {
   transition: all 0.2s cubic-bezier(0.27,-1.71, 0.76, 0.68);
 }
 
-.loading-content {
-  display: flex;
-  height: 100%;
-  width: 100%;
+#loading .content {
   align-items: center;
   justify-content: center;
   transition-property: all;
@@ -603,24 +632,11 @@ p {
   transition-duration: 150ms;
 }
 
-/* .loading-list {
-        @apply h-9;
-        animation:
-            sliding 6s
-    } */
-
-/* 
-    @keyframes sliding {
-        
-    } */
-
-.bubble-up {
-  /* @apply rounded-full; */
+.scale-0{
   scale: 0;
-  /* top: -100vh; */
 }
 
-.header {
+#header {
   position: fixed;
   top: 0px;
   left: 0px;
@@ -633,21 +649,19 @@ p {
   padding-right: 10%;
 }
 
-:is(.dark .header) {
+:is(.dark #header) {
   background-color: var(--pri-color);
 }
 
 @media (min-width: 768px) {
-  .header {
+  #header {
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
 }
 
-.header-content {
-  display: flex;
-  width: 100%;
+#header .content {
   align-items: center;
   justify-content: space-between;
 }
@@ -664,6 +678,9 @@ p {
 }
 
 .nav {
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   position: fixed;
   bottom: 1.25rem;
   left: 0px;
@@ -671,17 +688,19 @@ p {
   z-index: 50;
   margin-left: auto;
   margin-right: auto;
-  width: 15rem;
+  width: 16rem;
   border-radius: 1.5rem;
-  border-width: 2px;
-  border-color: var(--pri-color);
-  background-color: var(--sec-color);
-  padding: 0.75rem;
+  background-color: rgb(255 255 255 / 0.4);
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  color: var(--pri-color);
 }
 
 :is(.dark .nav) {
-  border-color: var(--sec-color);
-  background-color: var(--pri-color);
+  background-color: rgb(0 0 0 / 0.4);
+  color: var(--sec-color);
 }
 
 @media (min-width: 768px) {
@@ -691,6 +710,12 @@ p {
     margin-right: 0px;
     width: 47%;
     border-style: none;
+    background-color: transparent;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    --tw-shadow: 0 0 #0000;
+    --tw-shadow-colored: 0 0 #0000;
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
   }
 }
 
@@ -808,38 +833,15 @@ p {
   line-height: 1;
 }
 
-/* @apply rounded-lg w-[20vw] h-72 bg-sec-color; */
-
-.section {
-  margin-bottom: 1.25rem;
-  padding-top: 2.5rem;
-  padding-bottom: 2.5rem;
-  padding-left: 10%;
-  padding-right: 10%;
-}
-
-.section-title {
-  margin-left: auto;
-  margin-right: auto;
-  text-transform: uppercase;
-}
-
-@media (min-width: 768px) {
-  .section-title {
-    text-align: center;
-  }
-}
-
-.home-content {
-  display: flex;
+#home .content {
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   padding-top: 4rem;
 }
 
 @media (min-width: 768px) {
-  .home-content {
+  #home .content {
     flex-direction: row;
   }
 }
@@ -869,8 +871,13 @@ p {
   overflow: hidden;
   white-space: nowrap;
   border-right-width: 1px;
+  border-color: var(--pri-color);
   font-size: 1.875rem;
   line-height: 2.25rem;
+}
+
+:is(.dark .home-job) {
+  border-color: var(--sec-color);
 }
 
 @media (min-width: 768px) {
@@ -904,7 +911,7 @@ p {
 
 .lottie {
   z-index: -50;
-  width: 83.333333%;
+  width: 66.666667%;
 }
 
 #about {
@@ -917,12 +924,22 @@ p {
   color: var(--pri-color);
 }
 
-.about-content {
+#about .content {
+  margin-left: auto;
+  margin-right: auto;
   display: flex;
+  max-width: 640px;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: 1rem;
   line-height: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  #about .content {
+    padding: 4rem;
+  }
 }
 
 .about-me {
@@ -1036,6 +1053,10 @@ p {
   line-height: 2.25rem;
 }
 
+#projects .content {
+  flex-direction: column;
+}
+
 .project-list {
   display: flex;
   flex-direction: column;
@@ -1078,6 +1099,10 @@ p {
 }
 
 @media (min-width: 768px) {
+  .project:nth-child(even) {
+    flex-direction: row;
+  }
+
   .project:hover {
     background: rgba(255, 255, 255, 0.11);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -1178,13 +1203,13 @@ p {
   margin-bottom: 1.5rem;
 }
 
-.contact-content {
+#contact .content {
   display: flex;
   flex-direction: column;
 }
 
 @media (min-width: 768px) {
-  .contact-content {
+  #contact .content {
     flex-direction: row;
     justify-content: space-between;
   }
@@ -1328,10 +1353,6 @@ p {
   }
 }
 
-/* .footer {
-        @apply hidden h-96 2xl:block
-    } */
-
 .sr-only {
   position: absolute;
   width: 1px;
@@ -1451,6 +1472,12 @@ p {
   flex-shrink: 0;
 }
 
+.scale-0 {
+  --tw-scale-x: 0;
+  --tw-scale-y: 0;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
 .items-center {
   align-items: center;
 }
@@ -1553,7 +1580,7 @@ p {
 
 :root {
   --pri-color: #06070e;
-  --sec-color: #edffec;
+  --sec-color: #f6efee;
   --ter-color: #61e786;
   --qua-color: #ff9f1c;
 }
